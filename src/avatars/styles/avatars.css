@@ -1,1 +1,85 @@
 /* 여기에 스타일을 구현해 주세요 */
+.heading-avatar-container {
+  width: fit-content;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  height: 75vh;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background: linear-gradient(to right, #fbfbfb, #dfdfdf);
+}
+
+.avatar-box {
+  width: 340px;
+}
+
+img {
+  margin: 10px;
+  clip-path: circle(32px);
+}
+
+figure {
+  position: relative;
+  float: left;
+  width: fit-content;
+  margin: 0;
+}
+
+figure::before {
+  position: absolute;
+  width: 130px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #cdcdcd3d;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 5px 10px;
+  top: 64px;
+  left: 64px;
+  z-index: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+figure::after {
+  content: '';
+  position: absolute;
+  top: 57px;
+  left: 57px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+figure.online::before {
+  content: '온라인 입니다.';
+  color: rgb(30, 164, 72);
+}
+
+figure.offline::before {
+  content: '오프라인 입니다.';
+  color: rgb(187, 29, 29);
+}
+
+figure.online::after {
+  background-color: #4cfe88;
+}
+
+figure.offline::after {
+  background-color: #dbdbdb;
+}
+
+figure:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
