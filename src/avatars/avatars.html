@@ -14,31 +14,41 @@
   <body>
     <!-- 여기에 마크업을 구성해 주세요. -->
     <h1 class="heading-avatar-container">Avatars</h1>
-    <div class="avatar-container">
-      <div class="avatar-box">
-        <figure class="offline">
+    <div class="avatar-container" aria-labelledby="avatar-container-desc">
+      <span id="avatar-container-desc" class="sr-only">아바타 컨테이너 영역</span>
+      <div class="avatar-box" role="list" aria-labelledby="avatar-box-desc">
+        <span id="avatar-box-desc" class="sr-only">아바타 아이템들이 들어있는 박스</span>
+        <figure class="offline" role="listitem" aria-describedby="avatar1-status-desc" tabindex="1">
           <img src="./images/face1.jpg" alt="AVATAR1" width="64" height="64" />
+          <span id="avatar1-status-desc" class="sr-only">1번 아바타 오프라인</span>
         </figure>
-        <figure class="online">
+        <figure class="online" role="listitem" aria-describedby="avatar2-status-desc" tabindex="2">
           <img src="./images/face2.jpg" alt="AVATAR2" width="64" height="64" />
+          <span id="avatar2-status-desc" class="sr-only">2번 아바타 온라인</span>
         </figure>
-        <figure class="offline">
+        <figure class="offline" role="listitem" aria-describedby="avatar3-status-desc" tabindex="3">
           <img src="./images/face3.jpg" alt="AVATAR3" width="64" height="64" />
+          <span id="avatar3-status-desc" class="sr-only">3번 아바타 오프라인</span>
         </figure>
-        <figure class="online">
+        <figure class="online" role="listitem" aria-describedby="avatar4-status-desc" tabindex="4">
           <img src="./images/face4.jpg" alt="AVATAR4" width="64" height="64" />
+          <span id="avatar4-status-desc" class="sr-only">4번 아바타 온라인</span>
         </figure>
-        <figure class="online">
+        <figure class="online" role="listitem" aria-describedby="avatar5-status-desc" tabindex="5">
           <img src="./images/face5.jpg" alt="AVATAR5" width="64" height="64" />
+          <span id="avatar5-status-desc" class="sr-only">5번 아바타 온라인</span>
         </figure>
-        <figure class="online">
+        <figure class="online" role="listitem" aria-describedby="avatar6-status-desc" tabindex="6">
           <img src="./images/face6.jpg" alt="AVATAR6" width="64" height="64" />
+          <span id="avatar6-status-desc" class="sr-only">6번 아바타 온라인</span>
         </figure>
-        <figure class="offline">
+        <figure class="offline" role="listitem" aria-describedby="avatar7-status-desc" tabindex="7">
           <img src="./images/face7.jpg" alt="AVATAR7" width="64" height="64" />
+          <span id="avatar7-status-desc" class="sr-only">7번 아바타 오프라인</span>
         </figure>
-        <figure class="offline">
+        <figure class="offline" role="listitem" aria-describedby="avatar8-status-desc" tabindex="8">
           <img src="./images/face8.jpg" alt="AVATAR8" width="64" height="64" />
+          <span id="avatar8-status-desc" class="sr-only">8번 아바타 오프라인</span>
         </figure>
       </div>
     </div>
