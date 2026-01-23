@@ -29,9 +29,9 @@
         <fieldset>
           <legend class="sr-only">네이버 로그인 폼</legend>
           <input type="email" name="user-id" id="id-input-box" placeholder="아이디(이메일)" required pattern="^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
-          <span></span>
+          <span class="error-message">아이디는 이메일 형식으로 입력해 주세요.</span>
           <input type="password" name="user-password" id="password-input-box" placeholder="비밀번호" required minlength="10" />
-          <span></span>
+          <span class="error-message">비밀번호는 10자리 이상 입력해 주세요.</span>
           <button type="submit" id="login-button">로그인</button>
           <div class="login-maintain switch">
             <input type="checkbox" name="is-maintain-login" id="login-maintain-checkbox" />
