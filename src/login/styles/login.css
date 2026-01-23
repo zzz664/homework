@@ -1,1 +1,228 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  --desktop-width: 500px;
+  --base-font-size: 1rem;
+  --base-font-color: #121212;
+  --focus-color: #24388d;
+  --form-inline-margin: 1.25rem;
+  --default-input-font-size: 0.875rem;
+  --default-input-height: 45px;
+  --default-input-border-color: #dadada;
+  --default-input-bg-color: #fff;
+  --focus-input-border-color: #03cf5d;
+  --focus-input-bg-color: #e9f0fd;
+  --login-button-font-size: 1rem;
+  --login-button-font-color: #fff;
+  --login-button-height: 45px;
+  --login-button-bg-color: #03cf5d;
+  --login-button-margin-top: 1.25rem;
+  --switch-ui-margin-top: 0.625rem;
+  --checkbox-size: 24px;
+  --checkbox-bg-margin-right: 0.3125rem;
+  --logo-width: 230px;
+  --logo-height: 44px;
+  --logo-margin-top: 6.25rem;
+  --logo-margin-bottom: 3.125rem;
+
+  font-family: 'SUIT-Variable', sans-serif;
+  font-size: var(--base-font-size);
+  color: var(--base-font-color, #121212);
+
+  input {
+    &:focus {
+      outline-color: var(--focus-color);
+    }
+  }
+
+  a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+
+  a,
+  label,
+  span {
+    color: inherit;
+
+    &:focus {
+      outline-color: var(--focus-color);
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+.container {
+  display: block;
+  inline-size: 100vw;
+  block-size: calc(100vh - var(--logo-margin-top) - var(--logo-margin-bottom));
+
+  @media (width >= 768px) {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .logo {
+    inline-size: var(--logo-width);
+    margin-inline: auto;
+    margin-block-start: var(--logo-margin-top);
+    margin-block-end: var(--logo-margin-bottom);
+  }
+}
+
+#login-form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-inline: var(--form-inline-margin);
+  inline-size: calc(100% - var(--form-inline-margin) * 2);
+
+  @media (width >= 768px) {
+    inline-size: calc(500px - var(--form-inline-margin) * 2);
+  }
+
+  fieldset {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    inline-size: 100%;
+
+    input[name='user-id'],
+    input[name='user-password'] {
+      inline-size: 100%;
+      block-size: var(--default-input-height);
+      font-size: var(--default-input-font-size);
+      border: 1px solid var(--default-input-border-color);
+      background: var(--default-input-bg-color);
+      padding-inline: 1.25rem;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px 1px var(--focus-input-border-color);
+        background: var(--focus-input-bg-color);
+      }
+    }
+
+    #password-input-box {
+      margin-block-start: calc(var(--login-button-margin-top) / 2);
+    }
+
+    #login-button {
+      inline-size: 100%;
+      block-size: var(--login-button-height);
+      margin-block-start: var(--login-button-margin-top);
+      font-size: var(--login-button-font-size);
+      color: var(--login-button-font-color);
+      background: var(--login-button-bg-color);
+
+      &:focus {
+        outline-color: var(--focus-color);
+      }
+    }
+
+    .switch {
+      display: flex;
+      flex-flow: row nowrap;
+      margin-block-start: var(--switch-ui-margin-top);
+      color: var(--base-font-color);
+      font-size: var(--base-font-size);
+
+      input {
+        appearance: none;
+        border: 0;
+        background: transparent;
+      }
+    }
+
+    .login-maintain {
+      margin-inline-start: auto;
+
+      @media (width >= 768px) {
+        margin-inline-start: 0;
+        margin-inline-end: auto;
+      }
+
+      label {
+        display: inline-block;
+      }
+
+      #login-maintain-checkbox {
+        display: inline-block;
+        inline-size: var(--checkbox-size);
+        block-size: var(--checkbox-size);
+        margin-inline-end: var(--checkbox-bg-margin-right);
+        background: url(../images/unchecked.svg) no-repeat;
+
+        &:focus {
+          outline-color: var(--focus-color);
+        }
+      }
+
+      #login-maintain-checkbox:checked {
+        background: url(../images/checked.svg) no-repeat;
+      }
+    }
+
+    .ip-security {
+      display: none;
+      font-size: var(--base-font-size);
+      color: var(--base-font-color);
+
+      @media (width >= 768px) {
+        display: flex;
+      }
+
+      label {
+        position: relative;
+        inline-size: fit-content;
+      }
+
+      a {
+        position: relative;
+        margin-inline-end: var(--checkbox-bg-margin-right);
+      }
+
+      #ip-security-checkbox {
+        position: absolute;
+        inline-size: 100%;
+        block-size: 100%;
+      }
+
+      #ip-security-checkbox + span {
+        position: relative;
+        &::before {
+          content: 'OFF';
+          color: color-mix(in srgb, var(--base-font-color), white);
+        }
+      }
+
+      #ip-security-checkbox:checked + span {
+        &::before {
+          content: 'ON';
+          color: var(--login-button-bg-color);
+        }
+      }
+    }
+  }
+}
