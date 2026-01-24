@@ -6,37 +6,13 @@
 }
 
 body {
-  --desktop-width: 500px;
-  --base-font-size: 1rem;
-  --base-font-color: #121212;
-  --focus-color: #24388d;
-  --form-inline-margin: 1.25rem;
-  --default-input-font-size: 0.875rem;
-  --default-input-height: 45px;
-  --default-input-border-color: #dadada;
-  --default-input-bg-color: #fff;
-  --focus-input-border-color: #03cf5d;
-  --focus-input-bg-color: #e9f0fd;
-  --login-button-font-size: 1rem;
-  --login-button-font-color: #fff;
-  --login-button-height: 45px;
-  --login-button-bg-color: #03cf5d;
-  --login-button-margin-top: 1.25rem;
-  --switch-ui-margin-top: 0.625rem;
-  --checkbox-size: 24px;
-  --checkbox-bg-margin-right: 0.3125rem;
-  --logo-width: 230px;
-  --logo-height: 44px;
-  --logo-margin-top: 6.25rem;
-  --logo-margin-bottom: 3.125rem;
-
   font-family: 'SUIT-Variable', sans-serif;
   font-size: var(--base-font-size);
-  color: var(--base-font-color, #121212);
+  color: var(--black, #121212);
 
   input {
     &:focus {
-      outline-color: var(--focus-color);
+      outline-color: var(--blue);
     }
   }
 
@@ -52,33 +28,8 @@ body {
     color: inherit;
 
     &:focus {
-      outline-color: var(--focus-color);
+      outline-color: var(--blue);
     }
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border-width: 0;
-  }
-
-  .sr-only-for-label {
-    color: transparent;
-    position: absolute;
-    overflow: hidden;
-    inline-size: 100%;
-    block-size: 100%;
-    z-index: 1;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-use-select: none;
-    user-select: none;
   }
 }
 
@@ -92,14 +43,14 @@ body {
     flex-flow: column nowrap;
     align-items: center;
   }
+}
 
-  .logo {
-    display: block;
-    inline-size: var(--logo-width);
-    margin-inline: auto;
-    margin-block-start: var(--logo-margin-top);
-    margin-block-end: var(--logo-margin-bottom);
-  }
+.logo {
+  display: block;
+  inline-size: 230px;
+  margin-inline: auto;
+  margin-block-start: 6.25rem;
+  margin-block-end: 3.125rem;
 }
 
 #login-form {
@@ -117,31 +68,28 @@ body {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    border: 0;
-    margin: 0;
-    padding: 0;
     inline-size: 100%;
 
     input[name='user-id'],
     input[name='user-password'] {
       inline-size: 100%;
       block-size: var(--default-input-height);
-      font-size: var(--default-input-font-size);
-      border: 1px solid var(--default-input-border-color);
-      background: var(--default-input-bg-color);
+      font-size: var(--input-font-size);
+      border: 1px solid var(--gray);
+      background: var(--white);
       padding-inline: 1.25rem;
 
       &:focus {
         outline: none;
-        box-shadow: 0 0 5px 1px var(--focus-input-border-color);
-        background: var(--focus-input-bg-color);
+        box-shadow: 0 0 2px 1px var(--green);
+        background: var(--skyblue);
       }
     }
 
     .error {
       display: none;
       color: rgb(255, 44, 44);
-      font-size: var(--default-input-font-size);
+      font-size: var(--input-font-size);
       margin-inline-start: 1.25rem;
       margin-block-start: 0.3125rem;
     }
@@ -151,61 +99,49 @@ body {
     }
 
     #password-input-box {
-      margin-block-start: calc(var(--login-button-margin-top) / 2);
+      margin-block-start: 0.625rem;
     }
 
     #login-button {
       inline-size: 100%;
-      block-size: var(--login-button-height);
-      margin-block-start: var(--login-button-margin-top);
-      font-size: var(--login-button-font-size);
-      color: var(--login-button-font-color);
-      background: var(--login-button-bg-color);
+      block-size: var(--default-input-height);
+      margin-block-start: 1.25rem;
+      font-size: var(--base-font-size);
+      color: var(--white);
+      background: var(--green);
 
       &:focus {
-        outline-color: var(--focus-color);
+        outline-color: var(--blue);
       }
     }
 
     .switch {
       display: flex;
       flex-flow: row nowrap;
-      margin-block-start: var(--switch-ui-margin-top);
-      color: var(--base-font-color);
+      margin-block-start: 0.625rem;
+      color: var(--black);
       font-size: var(--base-font-size);
 
       input {
         appearance: none;
-        border: 0;
         background: transparent;
       }
     }
 
     .login-maintain {
       margin-inline-start: auto;
-      position: relative;
-      inline-size: fit-content;
 
       @media (width >= 768px) {
         margin-inline-start: 0;
         margin-inline-end: auto;
       }
 
-      label {
-        display: inline-block;
-      }
-
       #login-maintain-checkbox {
-        display: inline-block;
-        inline-size: var(--checkbox-size);
-        block-size: var(--checkbox-size);
-        margin-inline-end: var(--checkbox-bg-margin-right);
+        inline-size: 24px;
+        block-size: 24px;
+        margin-inline-end: var(--checkbox-margin-right);
         background: url(../images/unchecked.svg) no-repeat;
         order: -1;
-
-        &:focus {
-          outline-color: var(--focus-color);
-        }
       }
 
       #login-maintain-checkbox:checked {
@@ -216,40 +152,28 @@ body {
     .ip-security {
       display: none;
       font-size: var(--base-font-size);
-      color: var(--base-font-color);
+      color: var(--black);
 
       @media (width >= 768px) {
-        display: flex;
-      }
-
-      .on-off {
-        position: relative;
-        inline-size: fit-content;
+        display: block;
       }
 
       a {
-        position: relative;
-        margin-inline-end: var(--checkbox-bg-margin-right);
+        margin-inline-end: var(--checkbox-margin-right);
       }
 
       #ip-security-checkbox {
-        position: absolute;
-        inline-size: 100%;
-        block-size: 100%;
-      }
-
-      #ip-security-checkbox + span {
-        position: relative;
+        font-size: inherit;
         &::before {
           content: 'OFF';
-          color: color-mix(in srgb, var(--base-font-color), white);
+          color: color-mix(in srgb, var(--black), white);
         }
       }
 
-      #ip-security-checkbox:checked + span {
+      #ip-security-checkbox:checked {
         &::before {
           content: 'ON';
-          color: var(--login-button-bg-color);
+          color: var(--green);
         }
       }
     }

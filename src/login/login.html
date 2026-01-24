@@ -8,11 +8,13 @@
     <link rel="icon" href="../public/favicon/likelion.svg" type="image/svg+xml" />
     <link rel="preload" as="font" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+    <link rel="stylesheet" href="./styles/a11y.css" />
+    <link rel="stylesheet" href="./styles/theme.css" />
     <link rel="stylesheet" href="./styles/login.css" />
   </head>
   <body>
     <div class="container" aria-hidden="true">
-      <a href="#" class="logo" aria-describedby="logo-desc">
+      <a href="https://www.naver.com" class="logo" aria-describedby="logo-desc">
         <h1>
           <svg width="230" height="44" viewBox="0 0 230 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M30.0764 23.5394L13.6301 0H0V43.9824H14.279V20.443L30.7252 43.9824H44.3554V0H30.0764V23.5394Z" fill="#03CF5D" />
@@ -38,18 +40,15 @@
           <span class="error">비밀번호는 10자리 이상 입력해 주세요.</span>
           <button type="submit" id="login-button" aria-label="로그인 버튼">로그인</button>
           <div class="login-maintain switch">
-            <label for="login-maintain-checkbox" class="sr-only-for-label">로그인 상태유지 ON,OFF 스위치</label>
+            <label for="login-maintain-checkbox" class="sr-only">로그인 상태유지 ON,OFF 스위치</label>
             <span>로그인 상태 유지</span>
             <input type="checkbox" name="is-maintain-login" id="login-maintain-checkbox" />
           </div>
           <div class="ip-security switch">
             <a href="./pages/ip_security.html" aria-describedby="ip-security-desc" target="_blank" rel="noopener noreferrer">IP 보안 </a>
             <span id="ip-security-desc" class="sr-only">IP 보안 페이지로 이동</span>
-            <span class="on-off">
-              <label for="ip-security-checkbox" class="sr-only-for-label">IP 보안 ON,OFF 스위치</label>
-              <input type="checkbox" name="is-security" id="ip-security-checkbox" />
-              <span></span>
-            </span>
+            <label for="ip-security-checkbox" class="sr-only">IP 보안 ON,OFF 스위치</label>
+            <input type="checkbox" name="is-security" id="ip-security-checkbox" />
           </div>
         </fieldset>
       </form>

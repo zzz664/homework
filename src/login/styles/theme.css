@@ -1,0 +1,17 @@
+:root {
+  --black: #121212;
+  --blue: #24388d;
+  --gray: #dadada;
+  --green: #03cf5d;
+  --white: #fff;
+  --skyblue: #e9f0fd;
+
+  --base-font-size: 1rem;
+  --input-font-size: 0.875rem;
+
+  --desktop-width: 500px;
+  --default-input-height: 45px;
+
+  --form-inline-margin: 1.25rem;
+  --checkbox-margin-right: 0.3125rem;
+}
