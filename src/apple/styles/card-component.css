@@ -91,7 +91,7 @@
   }
 }
 
-.mackbook-air {
+.macbook-air {
   --product-image-url: var(--mackbook-air-url);
 
   @media (resolution >= 2x) {
@@ -107,7 +107,7 @@
   }
 }
 
-.card {
+.product-card {
   --button-color: none;
 
   display: flex;
