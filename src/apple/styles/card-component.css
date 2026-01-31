@@ -107,6 +107,15 @@
   }
 }
 
+.ipad-pro,
+.ipad-air {
+  &::after {
+    content: '출시일 추후 공개';
+    font-size: var(--small-text);
+    color: var(--gray);
+  }
+}
+
 .product-card {
   --button-color: none;
 
@@ -145,6 +154,7 @@
     line-height: var(--inline-normal);
     margin-block-end: var(--x-small-spacing);
     font-size: var(--base-spacing);
+    text-align: center;
 
     @media (width >= 1024px) {
       font-size: var(--medium-text);
@@ -182,11 +192,18 @@
   }
 }
 
-.ipad-pro,
-.ipad-air {
-  &::after {
-    content: '출시일 추후 공개';
-    font-size: var(--small-text);
-    color: var(--gray);
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--base-spacing);
+
+  .product-card {
+    grid-column: span 2;
+
+    @media (width >= 1024px) {
+      &:nth-child(n + 4) {
+        grid-column: span 1;
+      }
+    }
   }
 }
