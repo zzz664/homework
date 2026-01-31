@@ -176,6 +176,7 @@
     padding: var(--x-small-spacing) var(--small-spacing);
     border: 1px solid var(--button-color);
     border-radius: 1.875rem;
+    text-align: center;
 
     @media (width >= 1024px) {
       font-size: var(--x-small-text);
