@@ -108,6 +108,8 @@
 }
 
 .card {
+  --button-color: none;
+
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -119,10 +121,12 @@
 
   &:nth-child(odd) {
     color: var(--white);
+    --button-color: var(--blue-200);
   }
 
   &:nth-child(even) {
     color: var(--black);
+    --button-color: var(--black);
   }
 
   @media (width >= 1024px) {
@@ -149,13 +153,18 @@
 
   .button-container {
     order: 1;
+    display: flex;
+    flex-flow: row nowrap;
     column-gap: var(--base-spacing);
   }
 
   .button {
     display: inline-block;
+    flex-shrink: 0;
     font-size: var(--xx-small-text);
     padding: var(--x-small-spacing) var(--small-spacing);
+    border: 1px solid var(--button-color);
+    border-radius: 1.875rem;
 
     @media (width >= 1024px) {
       font-size: var(--x-small-text);
@@ -163,9 +172,13 @@
   }
 
   .fill {
+    color: var(--white);
+    background: var(--button-color);
   }
 
   .outline {
+    color: var(--button-color);
+    background: transparent;
   }
 }
 
