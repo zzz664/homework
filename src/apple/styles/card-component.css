@@ -171,6 +171,7 @@
   .button {
     display: inline-block;
     flex-shrink: 0;
+    min-inline-size: 6.25rem;
     font-size: var(--xx-small-text);
     padding: var(--x-small-spacing) var(--small-spacing);
     border: 1px solid var(--button-color);
