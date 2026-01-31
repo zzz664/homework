@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -7,10 +7,22 @@
     <link rel="icon" href="./favicon/apple-favicon.svg" />
     <link rel="apple-touch-icon" href="./favicon/apple-favicon.svg" />
     <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/ui-component.css" />
     <link rel="stylesheet" href="./styles/card-component.css" />
+    <script type="module" src="./scripts/ui-component.js"></script>
   </head>
   <body>
     <!-- 카드 컴포넌트 -->
-
+    <div class="ui-component">
+      <section class="ipad-pro card">
+        <h1 class="product-title">Product Name</h1>
+        <h2 class="product-subtitle">Product Description</h2>
+        <div class="button-container">
+          <a role="button" href="/" class="button fill">더 알아보기</a>
+          <a role="button" href="/" class="button outline">가격 보기</a>
+        </div>
+      </section>
+      <button type="button" class="copy-component">복사</button>
+    </div>
   </body>
 </html>

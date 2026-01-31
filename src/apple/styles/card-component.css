@@ -1,3 +1,179 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+/* 이미지 링크 custom property 설정 */
+:root {
+  --airpods-url: url(../products/airpods_pro.jpeg);
+  --airpods-2x-url: url(../products/airpods_pro_2x.jpeg);
+  --apple-watch-url: url(../products/apple_watch.jpeg);
+  --apple-watch-2x-url: url(../products/apple_watch_2x.jpeg);
+  --ipad-air-url: url(../products/ipad_air.jpeg);
+  --ipad-air-2x-url: url(../products/ipad_air_2x.jpeg);
+  --ipad-air-wide-url: url(../products/ipad_air_wide.jpeg);
+  --ipad-air-wide-2x-url: url(../products/ipad_air_wide_2x.jpeg);
+  --ipad-pro-url: url(../products/ipad_pro.jpeg);
+  --ipad-pro-2x-url: url(../products/ipad_pro_2x.jpeg);
+  --ipad-pro-wide-url: url(../products/ipad_pro_wide.jpeg);
+  --ipad-pro-wide-2x-url: url(../products/ipad_pro_wide_2x.jpeg);
+  --iphone15-url: url(../products/iphone15.jpeg);
+  --iphone15-2x-url: url(../products/iphone15_2x.jpeg);
+  --iphone15-pro-url: url(../products/iphone15_pro.jpeg);
+  --iphone15-pro-2x-url: url(../products/iphone15_pro_2x.jpeg);
+  --iphone15-pro-wide-url: url(../products/iphone15_pro_wide.jpeg);
+  --iphone15-pro-wide-2x-url: url(../products/iphone15_pro_wide_2x.jpeg);
+  --mackbook-air-url: url(../products/macbook_air.jpeg);
+  --mackbook-air-2x-url: url(../products/macbook_air_2x.jpeg);
+}
+
+/* 제품 이미지 url 설정 유틸리티 클래스 정의 (픽셀밀도와 뷰포트너비에 따라 다른 이미지 링크가 적용되도록 함) */
+.ipad-pro {
+  --product-image-url: var(--ipad-pro-url);
+
+  @media (width >= 1024px) {
+    --product-image-url: var(--ipad-pro-wide-url);
+  }
+
+  @media (resolution >= 2x) {
+    --product-image-url: var(--ipad-pro-2x-url);
+
+    @media (width >= 1024px) {
+      --product-image-url: var(--ipad-pro-wide-2x-url);
+    }
+  }
+}
+
+.ipad-air {
+  --product-image-url: var(--ipad-air-url);
+
+  @media (width >= 1024px) {
+    --product-image-url: var(--ipad-air-wide-url);
+  }
+
+  @media (resolution >= 2x) {
+    --product-image-url: var(--ipad-air-2x-url);
+
+    @media (width >= 1024px) {
+      --product-image-url: var(--ipad-air-wide-2x-url);
+    }
+  }
+}
+
+.iphone15-pro {
+  --product-image-url: var(--iphone15-pro-url);
+
+  @media (width >= 1024px) {
+    --product-image-url: var(--iphone15-pro-wide-url);
+  }
+
+  @media (resolution >= 2x) {
+    --product-image-url: var(--iphone15-pro-2x-url);
+
+    @media (width >= 1024px) {
+      --product-image-url: var(--iphone15-pro-wide-2x-url);
+    }
+  }
+}
+
+.iphone15 {
+  --product-image-url: var(--iphone15-url);
+
+  @media (resolution >= 2x) {
+    --product-image-url: var(--iphone15-2x-url);
+  }
+}
+
+.apple-watch {
+  --product-image-url: var(--apple-watch-url);
+
+  @media (resolution >= 2x) {
+    --product-image-url: var(--apple-watch-2x-url);
+  }
+}
+
+.mackbook-air {
+  --product-image-url: var(--mackbook-air-url);
+
+  @media (resolution >= 2x) {
+    --product-image-url: var(--mackbook-air-2x-url);
+  }
+}
+
+.airpods-pro {
+  --product-image-url: var(--airpods-url);
+
+  @media (resolution >= 2x) {
+    --product-image-url: var(--airpods-2x-url);
+  }
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: var(--product-image-url, #121212) no-repeat center/cover;
+  inline-size: 100%;
+  block-size: var(--size);
+  padding-block-start: var(--large-spacing);
+  row-gap: var(--small-spacing);
+
+  &:nth-child(odd) {
+    color: var(--white);
+  }
+
+  &:nth-child(even) {
+    color: var(--black);
+  }
+
+  @media (width >= 1024px) {
+    padding-block-start: var(--extra-large-spacing);
+  }
+
+  .product-title {
+    font-size: var(--large-text);
+
+    @media (width >= 1024px) {
+      font-size: var(--extra-large-text);
+    }
+  }
+
+  .product-subtitle {
+    line-height: var(--inline-normal);
+    margin-block-end: var(--x-small-spacing);
+    font-size: var(--base-spacing);
+
+    @media (width >= 1024px) {
+      font-size: var(--medium-text);
+    }
+  }
+
+  .button-container {
+    order: 1;
+    column-gap: var(--base-spacing);
+  }
+
+  .button {
+    display: inline-block;
+    font-size: var(--xx-small-text);
+    padding: var(--x-small-spacing) var(--small-spacing);
+
+    @media (width >= 1024px) {
+      font-size: var(--x-small-text);
+    }
+  }
+
+  .fill {
+  }
+
+  .outline {
+  }
+}
+
+.ipad-pro,
+.ipad-air {
+  &::after {
+    content: '출시일 추후 공개';
+    font-size: var(--small-text);
+    color: var(--gray);
+  }
+}
