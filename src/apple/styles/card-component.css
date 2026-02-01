@@ -193,19 +193,3 @@
     background: transparent;
   }
 }
-
-.product-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--base-spacing);
-
-  .product-card {
-    grid-column: span 2;
-
-    @media (width >= 1024px) {
-      &:nth-child(n + 4) {
-        grid-column: span 1;
-      }
-    }
-  }
-}
